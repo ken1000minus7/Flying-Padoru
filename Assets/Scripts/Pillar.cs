@@ -2,11 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Padoru : MonoBehaviour
+public class Pillar : MonoBehaviour
 {
-
-    public Rigidbody2D rigidBody;
-    public float speed = 6f;
+    public float speed = 5f;
 
     // Start is called before the first frame update
     void Start()
@@ -17,11 +15,11 @@ public class Padoru : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Space))
+        transform.position -= new Vector3(speed * Time.deltaTime, 0);
+
+        if(transform.position.x < -12f)
         {
-            rigidBody.velocity = new Vector2(0, speed);
+            Destroy(gameObject);
         }
     }
-
-
 }
