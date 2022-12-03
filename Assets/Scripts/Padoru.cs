@@ -23,7 +23,7 @@ public class Padoru : MonoBehaviour
         if (!gameManager.isPlaying())
             return;
 
-        if(Input.GetKeyDown(KeyCode.Space))
+        if(Input.GetKeyDown(KeyCode.Space) || (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began))
         {
             rigidBody.velocity = new Vector2(0, speed);
         }

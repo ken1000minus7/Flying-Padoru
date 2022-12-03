@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
     private bool playing = true;
     private UIManager uIManager;
     private AudioSource audioSource;
+
     [SerializeField]
     private AudioClip gameMusic;
 
