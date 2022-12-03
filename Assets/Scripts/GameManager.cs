@@ -14,6 +14,9 @@ public class GameManager : MonoBehaviour
 
     [SerializeField]
     private AudioClip endMusic;
+
+    [SerializeField]
+    private int score = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -45,5 +48,11 @@ public class GameManager : MonoBehaviour
     public void PlayAgain()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    public void UpdateScore()
+    {
+        score++;
+        uIManager.UpdateScore(score);
     }
 }
